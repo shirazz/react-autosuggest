@@ -78,6 +78,7 @@ export default class Autosuggest extends Component {
         );
       }
     },
+    autoCloseSuggestionOnBlur: PropTypes.bool,
     focusInputOnSuggestionClick: PropTypes.bool,
     highlightFirstSuggestion: PropTypes.bool,
     theme: PropTypes.object,
