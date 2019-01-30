@@ -565,6 +565,15 @@ export default class Autosuggest extends Component {
         this.blurEvent = event;
 
         if (!this.justSelectedSuggestion) {
+          const { autoCloseSuggestionOnBlur } = this.props;
+          const inputType = this.input.type;
+          const hasSuggestion = this.props.suggestions.length;
+
+          if (autoCloseSuggestionOnBlur) {
+            if (inputType === 'search' && hasSuggestion) {
+              return;
+            }
+          }
           this.onBlur();
           this.onSuggestionsClearRequested();
         }
